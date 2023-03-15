@@ -1,0 +1,1 @@
+web: gunicorn <btrs_django>.wsgi --log-file -

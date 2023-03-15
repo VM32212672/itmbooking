@@ -1,0 +1,13 @@
+venv/
+# Ignore pycache folders
+__pycache__/
+
+# Ignore .pyc files
+*.pyc
+
+# Ignore the virtual environment folder
+venv/
+
+# Ignore the database file
+# db.sqlite3
+

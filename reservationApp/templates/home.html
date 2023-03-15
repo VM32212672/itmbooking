@@ -1,0 +1,174 @@
+{% extends "base.html" %} {% load humanize %} {% load customfilter %} {% block pageContent %}
+{% load static %}
+<!--Section: Content-->
+<section class="">
+    {% if user.id %}
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="card rounded-0 shadow border-primary text-start summary-card my-3">
+                <div class="card-body">
+                    <div class="d-flex w-100">
+                        <div class="col-8 pe-2">
+                            <div class="summary-title fs-5 border-bottom">Total Categories</div>
+                            <div class="summary-count text-end fw-bolder mt-3 px-4">{{ categories|intcomma }}</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="summary-icon p-3 rounded border text-center bg-gradient bg-light">
+                                <i class="fa fa-list"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="card rounded-0 shadow border-warning text-start summary-card my-3">
+                <div class="card-body">
+                    <div class="d-flex w-100">
+                        <div class="col-8 pe-2">
+                            <div class="summary-title fs-5 border-bottom">Total Cars</div>
+                            <div class="summary-count text-end fw-bolder mt-3 px-4">{{ products|intcomma }}</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="summary-icon p-3 rounded border text-center bg-gradient bg-light">
+                                <i class="fa fa-bus fs-2"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="card rounded-0 shadow border-success text-start summary-card my-3">
+                <div class="card-body">
+                    <div class="d-flex w-100">
+                        <div class="col-8 pe-2">
+                            <div class="summary-title fs-5 border-bottom">Total Upcoming Trip</div>
+                            <div class="summary-count text-end fw-bolder mt-3 px-4">{{ upcoming_trip|intcomma }}</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="summary-icon p-3 rounded border text-center bg-gradient bg-light">
+                                <i class="fa fa-file-invoice fs-2"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {% else %}
+    {% comment %} <div class="card card-default rounded-0 shadow border border-dark">
+        <div class="card-body">
+            <div class="container-fluid">
+                <h2 class="text-center fw-bold">Welcome to Online CartTicket Reservation System</h2>
+                <hr>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis nisi eleifend, fringilla velit sed, tempus neque. Mauris maximus ex tortor. Integer in orci eu tortor luctus cursus ac in dui. Cras scelerisque erat in quam ornare, eu vulputate
+                    eros ornare. Integer vulputate risus ut magna dignissim, vel ultricies eros congue. Fusce cursus mattis tortor eu tempor. Morbi lacinia lacinia sapien. Nam ultrices justo a diam feugiat commodo. Proin a eros eget lacus eleifend egestas
+                    vitae sed nisl. Mauris aliquet fringilla ex imperdiet vulputate. In quis risus id elit consectetur gravida. Phasellus hendrerit dui eget libero tempus congue.
+                    <br> Vivamus libero sem, consequat a lobortis eu, eleifend sit amet magna. Nam vestibulum enim sit amet sapien lobortis molestie. Pellentesque ut leo vel ipsum facilisis fermentum. Maecenas aliquet augue id finibus sagittis. Sed molestie
+                    lobortis risus, eu ultricies diam dignissim nec. Maecenas ac pharetra nibh, at eleifend nibh. Suspendisse scelerisque semper sem a dictum. Sed condimentum ut ipsum nec suscipit. Nam efficitur nec tortor sed volutpat. Vivamus at elementum
+                    risus, ac mollis nisl. Quisque ullamcorper purus eget metus condimentum, id viverra diam convallis. Sed tempus mi nec velit scelerisque fringilla vel at lectus. Fusce ut neque eget lacus hendrerit porttitor eu in ligula. Mauris mollis
+                    non lectus id finibus. Morbi in ultricies nisi. Fusce ut arcu aliquet, sollicitudin magna in, hendrerit mi.
+                    <br> Proin a nisi scelerisque, tempor est ac, ultricies metus. Mauris quis sapien ac nulla varius malesuada sed in mauris. Integer sapien turpis, malesuada in aliquam vitae, congue quis risus. Duis sodales quis leo ultricies venenatis.
+                    In vehicula magna sit amet mauris tempus vestibulum. Donec eu lacinia augue. Aenean eleifend sodales ante et tempor. Integer bibendum ante in nisi consectetur efficitur. Mauris non fermentum ante. Orci varius natoque penatibus et magnis
+                    dis parturient montes, nascetur ridiculus mus. Aliquam nibh quam, blandit molestie erat id, bibendum efficitur sapien. Suspendisse pellentesque a neque non venenatis. Etiam quam purus, sollicitudin nec urna ornare, molestie dictum
+                    nunc. Duis vehicula hendrerit rutrum.
+                    <br> Cras semper arcu a lacus scelerisque imperdiet. Quisque ut finibus metus, id euismod sem. Donec accumsan viverra ligula, condimentum dictum nisl molestie eu. Suspendisse potenti. Nulla cursus magna in risus interdum posuere. Nunc
+                    fermentum augue nisl, eu faucibus elit suscipit vel. Vivamus ultrices sem quam, nec vehicula leo commodo sit amet. Cras dolor risus, aliquam sed tristique et, sollicitudin vitae tellus. Curabitur ac porta velit.
+                    <br> Aliquam erat volutpat. Aliquam erat volutpat. Sed velit quam, ullamcorper nec sem eget, dignissim tincidunt risus. Morbi laoreet sapien sed ipsum dignissim, at bibendum mauris iaculis. Quisque vulputate efficitur justo, at maximus
+                    nunc vulputate non. Pellentesque eleifend nibh ut sagittis faucibus. In a diam rutrum, varius ipsum eu, vestibulum ipsum.
+                </p>
+            </div>
+        </div>
+    </div> {% endcomment %}
+    {% endif %}
+</section>
+
+
+
+      
+    
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        {% comment %} <span class="carousel-control-prev-icon" aria-hidden="true"></span> {% endcomment %}
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        {% comment %} <span class="carousel-control-next-icon" aria-hidden="treuw"></span> {% endcomment %}
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card card-default rounded-0 shadow ">
+            <div class="card-header">
+                <div class="d-flex w-100 align-items-center justify-content-between">
+                    <h4 class="card-title fw-bold">Schedules List</h4>
+                    <div class="tools">
+                        {% comment %} <button type="button" class="btn btn-primary rounded-0 bg-gradient btn-sm" id='add_new'><i class="fa fa-plus"></i> Add New</button> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="container-fluid">
+                    <table class="table table-bordered" id="schedule-list">
+                        <colgroup>
+                            <col width="5%">
+                            <col width="15%">
+                            <col width="20%">
+                            <col width="30%">
+                            <col width="10%">
+                            <col width="10%">
+                            {% comment %} <col width="10%"> {% endcomment %}
+                        </colgroup>
+                        <thead>
+                            <tr class="bg-gradient bg-primary bg-opacity-50 text-light">
+                                <th class="px-2 py-2 text-center">#</th>
+                                <th class="px-2 py-2 text-center">Schedule</th>
+                                <th class="px-2 py-2 text-center">Cars</th>
+                                <th class="px-2 py-2 text-center">Route (From - To)</th>
+                                <th class="px-2 py-2 text-center">Drive</th>
+                                <th class="px-2 py-2 text-center">Status</th>
+                                {% comment %} <th class="px-2 py-2 text-center">Action</th> {% endcomment %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for schedule in schedules %}
+                            <tr>
+                                <td class="px-2 py-1 align-middle">{{ forloop.counter }}</td>
+                                <td class="px-2 py-1 align-middle">{{ schedule.schedule|date:"Y-m-d h:i A" }}</td>
+                                <td class="px-2 py-1 align-middle">
+                                    <div class="lh-1">
+                                        <div>{{ schedule.bus.bus_number }}</div>
+                                        <small class="text-muted">{{ schedule.bus.category }}</small>
+                                    </div>
+                                </td>
+                                <td class="px-2 py-1 align-middle">
+                                    <div class="lh-1">
+                                        <div>{{ schedule.depart }}</div>
+                                        <div>{{ schedule.destination }}</div>
+                                    </div>
+                                </td>
+                                <td class="px-2 py-1 align-middle">{{ schedule.drive.name}}-{{ schedule.drive.phone}}</td>
+                                <td class="px-1 py-1 align-middle text-center">
+                                    {% if schedule.status == '1' %}
+                                    <span class="badge bg-primary bg-gradient rounded-pill px-2">Active</span> {% else %}
+                                    <span class="badge bg-danger bg-gradient rounded-pill px-2">Cancelled</span> {% endif %}
+                                </td>
+                                {% comment %} <td class="px-2 py-1 align-middle text-center">
+                                    <a class="btn btn-outline-primary btn-sm edit-data" href="javascript:void(0)" data-id="{{ schedule.pk }}" title="Edit">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                    <button class="btn btn-outline-danger btn-sm delete-data" type="button" data-id="{{ schedule.pk }}" title="Delete">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </td> {% endcomment %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+ {% endblock pageContent %}
